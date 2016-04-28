@@ -19,6 +19,14 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
       if(is_front_page()):
         echo do_shortcode('[rev_slider alias="home"]');
+    ?>
+<section class="big-section center">
+<div class="container">
+<h2>Recent Products</h2>
+<?php echo do_shortcode('[recent_products per_page="8" columns="4"]'); ?>
+</div>
+</section>
+<?php
       endif;
     ?>
 
