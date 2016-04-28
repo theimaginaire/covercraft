@@ -17,7 +17,11 @@ use Roots\Sage\Wrapper;
     <?php
       do_action('get_header');
       get_template_part('templates/header');
+      if(is_front_page()):
+        echo do_shortcode('[rev_slider alias="home"]');
+      endif;
     ?>
+
     <div class="wrap container" role="document">
       <div class="content row">
         <main class="main">
