@@ -23,7 +23,7 @@ use Roots\Sage\Wrapper;
 <section class="big-section center">
 <div class="container">
 <h2>Recent Products</h2>
-<?php echo do_shortcode('[recent_products per_page="8" columns="4"]'); ?>
+<?php echo do_shortcode('[product_categories number="12" columns="4"]'); ?>
 </div>
 </section>
 <?php
