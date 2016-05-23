@@ -21,7 +21,7 @@ use Roots\Sage\Wrapper;
         echo do_shortcode('[rev_slider alias="home"]');
     ?>
 <section class="big-section center">
-<div class="container">
+<div class="container-fluid">
 <h2>Recent Products</h2>
 <?php echo do_shortcode('[product_categories number="12" columns="4"]'); ?>
 </div>
@@ -30,7 +30,7 @@ use Roots\Sage\Wrapper;
       endif;
     ?>
 
-    <div class="wrap container" role="document">
+    <div class="wrap container-fluid" role="document">
       <div class="content row">
         <main class="main">
           <?php include Wrapper\template_path(); ?>

@@ -27,7 +27,8 @@ function setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
-    'primary_navigation' => __('Primary Navigation', 'sage')
+    'primary_navigation' => __('Primary Navigation', 'sage'),
+    'topbar_navigation' => __('Top Bar Navigation', 'sage'),
   ]);
 
   // Enable post thumbnails
@@ -46,7 +47,7 @@ function setup() {
 
   // Use main stylesheet for visual editor
   // To add custom styles edit /assets/styles/layouts/_tinymce.scss
-  add_editor_style(Assets\asset_path('styles/main.css'));
+  // add_editor_style(Assets\asset_path('styles/main.css'));
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
@@ -86,6 +87,7 @@ function display_sidebar() {
     is_404(),
     is_front_page(),
     is_page_template('template-custom.php'),
+    is_singular('product'),
   ]);
 
   return apply_filters('sage/display_sidebar', $display);

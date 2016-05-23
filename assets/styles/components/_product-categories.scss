@@ -1,0 +1,14 @@
+.count {
+	display: none;
+}
+.product-category {
+	position: relative;
+	h3 {
+		position: absolute;
+		@include center(xy);
+		font-size: 2rem !important;
+		padding: 0 !important;
+		color: #fff;
+	}
+
+}

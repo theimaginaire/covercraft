@@ -1,5 +1,63 @@
-<header class="banner navbar navbar-default navbar-static-top" role="banner">
-  <div class="container">
+<section class="top-bar hidden-xs">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <?php
+
+      // check if the repeater field has rows of data
+      if( have_rows('selling_points', 'options') ):
+      ?>
+      <ul>
+      <?php
+        // loop through the rows of data
+          while ( have_rows('selling_points', 'options') ) : the_row();
+
+              // display a sub field value
+              $icon = get_sub_field('icon');
+              $selling_point = get_sub_field('selling_point');
+      ?>
+      <li><i class="fa <?php echo $icon; ?>"></i> <?php echo $selling_point; ?></li>
+      <?php
+          endwhile;
+      ?>
+      </ul>
+      <?php
+      endif;
+      ?>
+      
+    </div><!-- #col-md-6 -->
+    <div class="col-md-4">
+      <?php
+      if (has_nav_menu('topbar_navigation')) :
+        wp_nav_menu(['theme_location' => 'topbar_navigation', 'menu_class' => 'pull-right']);
+      endif;
+      ?>
+    </div>
+    <div class="col-md-2">
+    <ul class="pull-right">
+    <li><i class="fa fa-phone"></i> <?php echo imaginaire_get_option('telephone'); ?></li>
+    </ul>
+    </div>
+  </div>
+</div>
+</section>
+<header>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-3">
+      <?php  echo do_shortcode('[yith_woocommerce_ajax_search]'); ?> 
+    </div>
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-3">
+
+    </div>
+</div>
+</div>
+</header>
+<section class="banner navbar navbar-default navbar-static-top" role="banner">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only"><?= __('Toggle navigation', 'sage'); ?></span>
@@ -7,7 +65,6 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
     </div>
 
     <nav class="collapse navbar-collapse" role="navigation">
@@ -18,4 +75,4 @@
       ?>
     </nav>
   </div>
-</header>
+</section>
