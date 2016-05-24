@@ -1,3 +1,4 @@
+<section id="hwrap">
 <section class="top-bar hidden-xs">
 <div class="container-fluid">
   <div class="row">
@@ -33,7 +34,7 @@
       endif;
       ?>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 hidden-md">
     <ul class="pull-right">
     <li><i class="fa fa-phone"></i> <?php echo imaginaire_get_option('telephone'); ?></li>
     </ul>
@@ -41,15 +42,17 @@
   </div>
 </div>
 </section>
-<section id="hwrap">
+
 <header>
 <div class="container-fluid">
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 hidden-xs">
       <?php  echo do_shortcode('[yith_woocommerce_ajax_search]'); ?> 
     </div>
     <div class="col-md-6">
+        <a href="<?php bloginfo('url'); ?>">
         <img src="<?php the_field('logo', 'options'); ?>" class="logo img-responsive" alt="<?php echo imaginaire_get_option('company'); ?>" />
+        </a>
     </div>
     <div class="col-md-3">
       <div class="cart-panel">

@@ -18,16 +18,32 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
       if(is_front_page()):
-        echo do_shortcode('[rev_slider alias="home"]');
+        // [uncomment if you want slider] echo do_shortcode('[rev_slider alias="home"]');
     ?>
 <section class="big-section center">
 <div class="container-fluid">
-<h2>Recent Products</h2>
-<?php echo do_shortcode('[product_categories number="12" columns="4"]'); ?>
+<?php get_template_part('templates/content', 'homeblocks'); ?>
+</div>
+</section>
+<section class="big-section">
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-6">
+      <main class="main">
+          <?php include Wrapper\template_path(); ?>
+        </main><!-- /.main -->
+  </div>
+  <div class="col-md-6">
+  <div class="best-sellers">
+    <h2>Best Selling Furniture</h2>
+    <?php echo do_shortcode('[best_selling_products per_page="2"]'); ?>
+  </div>
+  </div>
+</div>
 </div>
 </section>
 <?php
-      endif;
+      else:
     ?>
 
     <div class="wrap container-fluid" role="document">
@@ -43,6 +59,7 @@ use Roots\Sage\Wrapper;
       </div><!-- /.content -->
     </div><!-- /.wrap -->
     <?php
+    endif;
       do_action('get_footer');
       get_template_part('templates/footer');
       wp_footer();

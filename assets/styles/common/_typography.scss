@@ -1,5 +1,17 @@
+p {
+	font-size: 1.2rem;
+}
 h1 {
-	font-size: 2rem;
+	font-size: 2.8rem;
+	color: $darkgrey;
+	&:after {
+		display: block;
+		margin: 30px auto;
+		content: '';
+		width: 100px;
+		height: 6px;
+		background-color: $darkgrey;
+	}
 }
 h2 {
 	font-size: 1.8rem;
