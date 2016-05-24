@@ -8,7 +8,7 @@
 # Top Bar
 ------------------*/
 .top-bar {
-	padding: 20px 0;
+	padding: 10px 0;
 	background-color: $darkgrey;
 	color: #fff;
 	ul {
@@ -35,7 +35,7 @@
 ------------------*/
 @include MQ(L){
 	header {
-		padding: 80px 0;
+		padding: 5px 0;
 	}
 }
 @include MQ(S){
@@ -47,18 +47,33 @@
 		}
 	}
 }
+.sticky {
+	display: block;
+	position: fixed;
+	top: 0;
+	transition: all ease-in-out 0.5s;
+	z-index: 1000;
+	width: 100%;
+	opacity: .9;
+}
 header {
-	background-color: $midgrey;
+	background-color: lighten($darkgrey, 5%);
 	color: #fff;
+	.logo {
+		margin: 0 auto;
+	}
 	#yith-ajaxsearchform {
+
 		@include MQ(L){
 			width: 399px !important;
+			padding-top: 50px;
 		}
 
 		input[type='search'], input[type='submit']{
 			background: none;
 			padding: 5px;
-			border: 2px solid #fff;
+			border: 0;
+			border-bottom: 2px solid #fff;
 			outline: none;
 			font-size: 1.4rem;
 		}
@@ -84,6 +99,31 @@ header {
 			}
 		}
 
+	}
+	a {
+		color: #fff;
+	}
+	
+	.cart-panel {
+		display: inline-block;
+		float: right;
+		text-align: center;
+		padding: 10px;
+		padding-top: 50px;
+		border-bottom: 2px solid #fff;
+		a {
+			font-size: 1.4rem;
+			&:hover {
+				color: #fff;
+			}
+			&:not(:last-child){
+				margin-right: 20px;
+			}
+		}
+		.fa {
+			padding-top: 10px;
+			font-size: 3rem;
+		}
 	}
 }
 .autocomplete-suggestions {
@@ -118,7 +158,49 @@ header {
 /*-----------------
 # Nav
 ------------------*/
+.nav>li>a {
+	padding: 10px;
+}
 .navbar {
 	margin-bottom: 0;
+	background-color: lighten($darkgrey, 5%);
 	border: none;
+	width: 100%;
+	.navbar-collapse {
+		margin: 0 auto;
+		text-align: center;
+		width: 100%;
+		.navbar-nav {
+			display: inline-block;
+			float: none;
+			margin: 0 auto !important;
+			text-align: center;
+			.active {
+				@include MQ(L){
+					a{
+						background: none;
+						color: #fff;
+						
+					}
+				}
+				@include MQ(S){
+					a{
+						background:none;
+						color: #fff;
+					}
+					
+				}
+				
+			}
+			li {
+				a {
+					color: #fff;
+					font-size: 1.3rem;
+				}
+				&:not(:last-child){
+					margin-right: 20px;
+				}
+			}
+		}
+	}
 }

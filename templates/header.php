@@ -41,6 +41,7 @@
   </div>
 </div>
 </section>
+<section id="hwrap">
 <header>
 <div class="container-fluid">
 <div class="row">
@@ -48,15 +49,23 @@
       <?php  echo do_shortcode('[yith_woocommerce_ajax_search]'); ?> 
     </div>
     <div class="col-md-6">
-
+        <img src="<?php the_field('logo', 'options'); ?>" class="logo img-responsive" alt="<?php echo imaginaire_get_option('company'); ?>" />
     </div>
     <div class="col-md-3">
+      <div class="cart-panel">
+        <div class="row">
+        <div class="col-md-12">
+<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">Your Cart:</a>
 
+<a href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo WC()->cart->get_cart_total(); ?></a>
+        </div>
+        </div>
+      </div>
     </div>
 </div>
 </div>
 </header>
-<section class="banner navbar navbar-default navbar-static-top" role="banner">
+<section id="navbar" class="banner navbar navbar-default navbar-static-top" role="banner">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -75,4 +84,5 @@
       ?>
     </nav>
   </div>
+</section>
 </section>

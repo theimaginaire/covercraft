@@ -18,7 +18,14 @@
     // All pages
     'common': {
       init: function() {
-        // JavaScript to be fired on all pages
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 1){  
+                $('#hwrap').addClass("sticky");
+              }
+              else{
+                $('#hwrap').removeClass("sticky");
+              }
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
