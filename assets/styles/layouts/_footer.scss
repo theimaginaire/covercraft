@@ -1,0 +1,50 @@
+.bot-bar {
+	background-color: $midgrey;
+	padding: 10px;
+	.btn-primary {
+		padding: 10px;
+		background: none;
+		border: 2px solid #fff;
+		@include border-radius(0);
+		&:hover {
+			background-color: $darkgrey;
+			color: #fff;
+			transition: $ease;
+		}
+		&:not(:first-child){
+			margin-right: 15px;
+		}
+		@include MQ(S){
+			display: none;
+		}
+	}
+	p {
+		margin-top: 10px;
+		color: #fff;
+		font-size: 1.6rem;
+	}
+}
+footer {
+	text-align: center;
+	background-color: $darkgrey;
+	color: #fff;
+	padding: 60px;
+	.widget_nav_menu {
+		display: block;
+		margin-bottom: 40px;
+	}
+	.menu {
+		display: block;
+		padding: 0;
+		list-style: none;
+		li {
+			&:not(:last-child){
+				margin-bottom: 15px;
+			}
+			a {
+				color: #fff;
+				font-size: 1.3rem;
+			}
+		}
+	}
+}

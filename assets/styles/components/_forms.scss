@@ -13,3 +13,32 @@
   @extend .btn;
   @extend .btn-default;
 }
+select {
+	padding: 10px;
+	border: 2px solid darken($lightgrey, 10%);
+	outline: none;
+	@include MQ(S){
+		padding: 5px;
+	}
+}
+.woocommerce form {
+	h3 {
+		font-family: $secondary-font;
+	}
+}
+input[type='text'], textarea, input[type='tel'], input[type='email'], input[type='search'], input[type='submit']{
+	padding: 10px;
+	border: 2px solid $grey;
+	font-family: $secondary-font;
+	font-weight: 300;
+	background: none;
+}
+.woocommerce form .form-row.woocommerce-validated .select2-container, .woocommerce form .form-row.woocommerce-validated input.input-text, .woocommerce form .form-row.woocommerce-validated select {
+	border-color: $grey;
+}
+.woocommerce form .form-row label, .woocommerce-page form .form-row label {
+	font-family: $secondary-font;
+	text-transform: uppercase;
+	color: $midgrey;
+	font-weight: 300;
+}

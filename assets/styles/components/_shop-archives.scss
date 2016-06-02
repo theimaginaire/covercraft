@@ -1,0 +1,40 @@
+.woocommerce ul.products li.product {
+	text-align: center;
+	@include MQ(L){
+		border: 2px solid $grey;
+	}
+	@include MQ(S){
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	
+	.price {
+		color: $midgrey;
+		text-align: center;
+		font-size: 1.6rem;
+	}
+	h3 {
+		font-size: 1.6rem;
+		@include MQ(S){
+			font-size: 1.4rem;
+		}
+		text-align: center;
+	}
+	.yith-wcdp {
+		display: none;
+	}
+	.button {
+		font-family: $secondary-font;
+		text-transform: uppercase;
+		width: 100%;
+		padding: 20px;
+		background-color: $grey;
+		text-shadow: none;
+		@include border-radius(0);
+		&:hover {
+			background-color: $midgrey;
+			color: #fff;
+			transition: $ease;
+		}
+	}
+}

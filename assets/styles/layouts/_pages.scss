@@ -29,6 +29,7 @@
 			text-align: center;
 			margin: 0 auto !important;
 			width: 50% !important;
+			border: none !important;
 			h3, .amount, .button {
 				font-size: 1.4rem !important;
 			}
@@ -36,16 +37,9 @@
 				color: lighten($midgrey, 20%);
 			}
 			.button {
-				@include border-radius(0);
-				background-color: $darkgrey;
-				color: #fff;
-				text-shadow: none;
-				font-weight: 300;
-				&:hover {
-					background-color: $midgrey;
-					transition: $ease;
-				}
+				display: none !important;
 			}
+			
 		}
 	}
 }

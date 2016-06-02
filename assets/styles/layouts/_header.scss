@@ -8,13 +8,14 @@
 # Top Bar
 ------------------*/
 .top-bar {
-	padding: 10px 0;
+	padding: 5px 0;
 	background-color: $darkgrey;
 	color: #fff;
 	ul {
 		display: block;
 		padding: 0;
 		list-style: none;
+		margin: 0;
 		li {
 			display: inline-block;
 			font-size: 1.2rem;
@@ -35,7 +36,7 @@
 ------------------*/
 @include MQ(L){
 	header {
-		padding: 5px 0;
+		padding: 20px 0;
 	}
 }
 @include MQ(S){
@@ -54,7 +55,11 @@
 	transition: all ease-in-out 0.5s;
 	z-index: 1000;
 	width: 100%;
-	opacity: .9;
+	opacity: .95;
+	header {
+		padding: 20px 0;
+		transition: $ease;
+	}
 }
 header {
 	background-color: lighten($darkgrey, 5%);
@@ -163,17 +168,45 @@ header {
 # Nav
 ------------------*/
 .nav>li>a {
-	padding: 10px;
+	padding: 20px;
+}
+.navbar-nav {
+
+	.active {
+		@include MQ(L){
+			a{
+				background: none;
+				color: #fff;	
+			}
+		}
+		@include MQ(S){
+			a{
+				background:none;
+				color: #fff;
+			}
+			
+		}
+		
+	}
+	li {
+		a {
+			color: #fff;
+			font-size: 1.3rem;
+		}
+		&:not(:last-child){
+			margin-right: 20px;
+		}
+	}
 }
 .navbar {
-	margin-bottom: 0;
+	bottom: 0;
+	margin-bottom: 20px;
 	background-color: lighten($darkgrey, 5%);
 	border: none;
 	width: 100%;
+	@include border-radius(0);
 	.navbar-collapse {
-		margin: 0 auto;
 		text-align: center;
-		width: 100%;
 		.navbar-nav {
 			display: inline-block;
 			float: none;
@@ -183,8 +216,7 @@ header {
 				@include MQ(L){
 					a{
 						background: none;
-						color: #fff;
-						
+						color: #fff;	
 					}
 				}
 				@include MQ(S){
@@ -192,7 +224,6 @@ header {
 						background:none;
 						color: #fff;
 					}
-					
 				}
 				
 			}
@@ -204,6 +235,82 @@ header {
 				&:not(:last-child){
 					margin-right: 20px;
 				}
+			}
+		}
+	}
+}
+
+// Dropdown/Megamenu
+.dropdown-toggle:hover, .dropdown>a:hover, .nav .open>a, .navbar-nav>.open>a {
+	background: none !important;
+}
+.dropdown-menu {
+	position: absolute;
+	top: 60px;
+	@include border-radius(0);
+    background-color: $midgrey;
+    border: 0;
+    box-shadow: none;
+    color: #fff;
+    transition: $ease;
+}
+.dropdown-menu .sub-menu {
+    left: 100%;
+    margin-top: 0;
+    padding: 40px;
+}
+.menu-col {
+	width: 23vw;
+	@include MQ(S){
+		width: 80vw;
+	}
+	a {
+		display: block;
+		padding-bottom: 10px; 
+		border-bottom: 2px solid #fff;
+		&:hover {
+			border-bottom: 2px solid #fff;
+		}
+	}
+	.widget-area {
+		li {
+			float: left;
+			display: inline-block;
+			width: 48%;
+			@include MQ(S){
+				width: 100%;
+			}
+			img {
+				margin-bottom: 20px;
+			}
+
+		}
+		a {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+		.wp-post-image {
+			width: 100%;
+		}
+
+	}
+}
+.yawp_wim_title {
+		display: block;
+		font-size: 1.3rem;
+		padding-bottom: 10px;
+		border-bottom: 2px solid #fff;
+		margin-bottom: 10px !important;
+}
+.yamm-fw {
+	.elementy-ul {
+		padding: 0;
+		list-style: none;
+		li {
+				padding: 20px 0 !important;
+			a {
+				padding-bottom: 0;
+				border-bottom: none;
 			}
 		}
 	}

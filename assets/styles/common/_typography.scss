@@ -1,6 +1,14 @@
 p {
 	font-size: 1.2rem;
 }
+.woocommerce, dt {
+	font-size: 1.2rem;
+}
+h1.page-title {
+	&:after {
+		display: none;
+	}
+}
 h1 {
 	font-size: 2.8rem;
 	color: $darkgrey;

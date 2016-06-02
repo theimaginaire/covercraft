@@ -42,6 +42,23 @@ use Roots\Sage\Wrapper;
 </div>
 </div>
 </section>
+<?php elseif(is_archive('product')): ?>
+  <div class="wrap container-fluid" role="document">
+      <div class="content row">
+
+        
+
+        <main class="main">
+          <?php include Wrapper\template_path(); ?>
+        </main><!-- /.main -->
+        <aside class="sidebar">
+            <?php include Wrapper\sidebar_path(); ?>
+          </aside><!-- /.sidebar -->
+        <?php if (Setup\display_sidebar()) : ?>
+          
+        <?php endif; ?>
+      </div><!-- /.content -->
+    </div><!-- /.wrap -->
 <?php
       else:
     ?>
@@ -60,8 +77,10 @@ use Roots\Sage\Wrapper;
     </div><!-- /.wrap -->
     <?php
     endif;
+
       do_action('get_footer');
       get_template_part('templates/footer');
+      get_template_part('templates/content', 'modal');
       wp_footer();
     ?>
   </body>

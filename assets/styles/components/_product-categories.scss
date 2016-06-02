@@ -6,7 +6,7 @@
 .blocks {
 
 	margin: 0 auto;
-
+	margin-top: -20px;
 	@include MQ(L){
 		height: 65vh;
 	}

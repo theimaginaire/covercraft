@@ -1,0 +1,68 @@
+.shop_table {
+	font-size: 1.6rem;
+	.product-thumbnail {
+		width: 20vw;
+		.wp-post-image {
+			width: 100%;
+		}
+	}
+	#coupon_code {
+		width: 64%;
+		padding: 10px;
+		border: 2px solid $grey;
+		outline: none;
+	}
+
+	th {
+		font-family: $secondary-font;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		color: $darkgrey;
+
+	}
+}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+	background: none;
+	font-family: $secondary-font;
+	padding: 15px;
+	@include border-radius(0);
+	border: 2px solid $grey;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+}
+
+// Checkout
+
+#add_payment_method #payment, .woocommerce-checkout #payment {
+	background: none;
+	border: 2px solid $grey;
+	margin-bottom: 20px;
+	@include border-radius(0);
+}
+#add_payment_method #payment div.payment_box, .woocommerce-checkout #payment div.payment_box {
+	background-color: $lightgrey;
+	&:before {
+		border: 1em solid $lightgrey;
+		border-right-color: transparent;
+		border-top-color: transparent;
+		border-left-color: transparent;
+	}
+}
+.woocommerce form .form-row textarea {
+	height: 40vh;
+}
+.woocommerce .blockUI.blockOverlay {
+	width: 100%;
+	height: 100%;
+	background-color: #fff !important;
+	opacity: 0.8 !important;
+	color: #fff !important;
+	transition: $ease;
+}
+.woocommerce .woocommerce-error, .woocommerce .woocommerce-info, .woocommerce .woocommerce-message {
+	text-align: center;
+	font-size: 1.4rem;
+}
+.woocommerce .woocommerce-error:before, .woocommerce .woocommerce-info:before, .woocommerce .woocommerce-message:before {
+	display: none;
+}

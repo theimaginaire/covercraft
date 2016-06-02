@@ -1,0 +1,52 @@
+.sidebar {
+	@include MQ(L){
+		position: fixed;
+		right: 0;
+		height: 100vh;
+		margin-top: -20px;
+	}
+	.widget {
+		&:not(:first-child){
+			margin: $smlspace;
+		}
+		&:first-child {
+			margin-top: 20px;
+		}
+		padding: 20px;
+		border: 3px solid $lightgrey;
+		h3 {
+			font-family: $secondary-font;
+			text-transform: uppercase;
+			margin-top: 0;
+			margin-bottom: 20px;
+			font-size: 1.4rem;
+		}
+	}
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range {
+	background-color: darken($lightgrey, 10%);
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+	background-color: $midgrey;
+	@include border-radius(0);
+}
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
+	background-color: $lightgrey;
+}
+.tagCloud {
+	a {
+		display: block;
+	}
+}
+.widget_product_categories {
+	.product-categories {
+		padding: 0;
+		list-style: none;
+		li {
+			padding: 10px 0;
+			&:not(:last-child){
+				border-bottom: 1px solid darken($lightgrey, 10%);
+			}
+		}
+	}
+}
